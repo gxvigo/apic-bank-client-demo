@@ -41,7 +41,7 @@ angular.module('demoApp', [])
             $scope.accounts = response.data;
             console.log("### In GET accounts ## $scope.accounts: " + JSON.stringify($scope.accounts));
 
-            // Run callback from GET Appointments once $scope.patients is loaded
+            // Run callback from GET Appointments once $scogit commit -m "first commit"pe.patients is loaded
             if (_callback) {
                 console.log("### In GET accounts ## in _callback called");
                 _callback()
@@ -71,34 +71,41 @@ angular.module('demoApp', [])
 
     $scope.createPatient = function () {
 
+       console.log('### In POST new account');
 
-        console.log('### In POST new patient');
+        $scope.account.IBAN = "NA";
+        $scope.account.balance = 0;
+        var randomId = Math.round(Math.random()*1000000) + 1;
+        $scope.account.id = randomId.toString();
+        $scope.account.number = $scope.account.id;
+        $scope.account.swift_bic = "TSBANZ22";
+
+        console.log('### In POST new account - $scope.account: ' + JSON.toString($scope.account));
 
         var req = {
-            url: 'https://api.au.apiconnect.ibmcloud.com/giovanninzibmcom-acc-dev/medtech/api/patients'
+            url: 'https://datapower/openabank/sb/api/banks/tsb/accounts'
             , method: 'POST'
             , headers: {
-                'Authorization': 'Basic YWRtaW46YWRtaW4='
-                , 'Accept': 'application/json'
+                'Accept': 'application/json'
                 , 'Access-Control-Allow-Origin': '*'
                 , 'Content-Type': 'application/json'
-                , 'x-ibm-client-id': '21e90ade-2c65-4c2b-b91b-df75184cae66'
+                , 'x-ibm-client-id': '16e578d5-9448-45ab-9c2c-0ac507428484'
             }
-            , data: $scope.patient.patient
+            , data: $scope.account
         }
 
-        console.log('### In POST new patient ## req: ' + JSON.stringify(req));
+        console.log('### In POST new account ## req: ' + JSON.stringify(req));
 
 
         $http(req).then(function successCallback(response) {
-            console.log("### In POST new patient ## APIC call successful, response: " + JSON.stringify(response));
+            console.log("### In POST new account ## APIC call successful, response: " + JSON.stringify(response));
             $scope.httpCallReport = {
-                "response": "Patient created successfully"
+                "response": "Account created successfully"
             };
             // this callback will be called asynchronously
             // when the response is available
         }, function errorCallback(response) {
-            console.log("### In POST new patient ## APIC call failure, response: " + JSON.stringify(response));
+            console.log("### In POST new account ## APIC call failure, response: " + JSON.stringify(response));
             $scope.httpCallReport = {
                 "response": "A problem happened, please check logs"
                 , "hints": [{

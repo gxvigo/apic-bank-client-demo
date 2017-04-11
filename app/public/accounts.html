@@ -22,6 +22,9 @@
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
 
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="css/app.css" type="text/css">
 
@@ -40,9 +43,11 @@
 
         <header id="header">
             <div id="header-top">
-                <div id="logo">
-                    <img src="img/logo.png" height="70px" alt="Logo">
-                </div>
+                <a href="index.html">
+                    <div id="logo">
+                        <img src="img/logo.png" height="70px" alt="Logo">
+                    </div>
+                </a>
             </div>
             <div id="header-inner">
 
@@ -72,88 +77,57 @@
                     <div class="modal-body">
 
                         <form class="form-horizontal">
+                            <!--
                             <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">First name</label>
+                                <label for="email" class="col-sm-2 control-label">IBAN</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.first_name" placeholder="" value="">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.IBAN" placeholder="" value="">
                                 </div>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Last name</label>
+                                <label for="email" class="col-sm-2 control-label">Balance</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.last_name" placeholder="" value="">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.balance" placeholder="" value="">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Gender</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.gender" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Date of birth</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.date_of_birth" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Ethnicity</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.ethnicity" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Cell phone</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.cell_phone" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Home phone</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.home_phone" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">eMail</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.email" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Doctor</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.doctor" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Address</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.address" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">City</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.city" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">State</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.state" placeholder="" value="">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Zip code</label>
-                                <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.zipcode" placeholder="" value="">
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="email" class="col-sm-2 control-label">Id</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.id" placeholder="" value="">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.id" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Number</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.number" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">swift_bic</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.swift_bic" placeholder="" value="">
+                                </div>
+                            </div>
+                            -->
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Label</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.label" placeholder="" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Owner</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.owner" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Type</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="account.type" placeholder="" value="">
                                 </div>
                             </div>
                             <div class="form-group">
