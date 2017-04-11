@@ -259,7 +259,9 @@ section.container-fluid{
 }
 
 button.btn.btn-info.btn-lg{
-    background-color: #1a3262;
+    background-color: #344768;
+    font-weight: 100;
+    font-size: 16px;
 }
 
 .text-faded{
@@ -309,7 +311,7 @@ caption {
 }
 
 thead {
-  background: SteelBlue;
+  background: #28364f;
   color: white;
 }
 
@@ -320,6 +322,7 @@ thead {
 th,
 td {
   padding: 5px 10px;
+  font-weight: 100;
 }
 
 tbody tr:nth-child(even) {
