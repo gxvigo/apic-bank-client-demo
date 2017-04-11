@@ -5,7 +5,6 @@
 // for more info, see: http://expressjs.com
 var express = require('express');
 var myHttp = require('http');
-var http = require('http-request');
 var reload = require('reload');
 
 
@@ -35,7 +34,8 @@ app.use(express.static(__dirname + '/public'));
 
 // next line make the app 'cloud' enabled, depending if the VCAP var exist (Bluemix) or not the server is started with 
 // different parameters
-var port = (process.env.VCAP_APP_PORT || 3000); var host = (process.env.VCAP_APP_HOST || 'localhost');
+var port = (process.env.VCAP_APP_PORT || 3000); 
+var host = (process.env.VCAP_APP_HOST || "0.0.0.0");
 
 // Reload (automatica browser refresh) code here 
 var server = myHttp.createServer(app);
