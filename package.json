@@ -1,0 +1,23 @@
+{
+  "name": "NodejsStarterApp",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app/app.js",
+  "scripts": {
+    "start": "nodemon -e css,ejs,js,json --watch app --ignore feedback.json"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cfenv": "1.0.x",
+    "express": "4.13.x",
+    "http": "0.0.0",
+    "http-request": "^0.7.0",
+    "moment": "^2.17.1",
+    "reload": "^1.1.1",
+    "undefsafe": "^1.2.0"
+  },
+  "repository": {},
+  "engines": {
+    "node": "4.2.x"
+  }
+}

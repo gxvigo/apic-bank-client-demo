@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demoApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mobile banking</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app.css" type="text/css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page page-top" ng-controller="Controller" ng-init="loadPatientTable()">
+
+        <header id="header">
+            <div id="header-top">
+                <div id="logo">
+                    <img src="img/logo.png" height="70px" alt="Logo">
+                </div>
+            </div>
+            <div id="header-inner">
+
+                <div class="title">
+                    At your service since 1850
+                </div>
+
+                <div class="clr"></div>
+            </div>
+        </header>
+
+
+    <div class="container">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add account</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Create account</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">First name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.first_name" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Last name</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.last_name" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Gender</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.gender" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Date of birth</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.date_of_birth" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Ethnicity</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.ethnicity" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Cell phone</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.cell_phone" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Home phone</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.home_phone" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">eMail</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.email" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Doctor</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.doctor" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Address</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.address" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">City</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.city" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">State</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.state" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Zip code</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.zipcode" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">Id</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="firstName" ng-model="patient.patient.id" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <a href="#result" class="btn btn-primary btn-xl page-scroll" ng-click="createPatient()">Submit</a>
+                                </div>
+                            </div>
+                        </form>
+
+                        <section class="" id="result">
+                            <div class="container">
+                                <div ng-show="httpCallReport">
+                                    <div class="panel panel-default col-lg-12 bg-dark">
+                                        <div class="panel-body">
+                                            <p class="text-faded">{{httpCallReport.response}}</p>
+                                            <ul class="text-faded" ng-repeat="hint in httpCallReport.hints">
+                                                <li ng-repeat="(key, val) in hint">{{val}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                        </section>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <section id="form">
+            <div class="container">
+                <div class="col-lg-12 table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="colMaxsize">Label</th>
+                                <th class="colMaxsize">Balance</th>
+                                <th class="colMaxsize">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in accounts">
+                                <th class="colMaxsize">{{x.label}}</th>
+                                <th class="colMaxsize">{{x.balance}}</th>
+                                <th class="colMaxsize">{{x.type}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="reference">
+            <div class="container">
+
+            </div>
+        </section>
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.fittext.js"></script>
+        <script src="js/wow.min.js"></script>
+
+        <!-- Angular -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <!-- load angular -->
+        <script src="js/controller.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/creative.js"></script>
+
+
+        <!-- All you have to do is include the reload script and have it be on every page of your project -->
+        <script src="/reload/reload.js"></script>
+
+</body>
+
+</html>
